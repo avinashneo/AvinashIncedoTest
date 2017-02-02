@@ -70,10 +70,11 @@ class CalculatePrice
             #echo $quantity."===".$newQuantity.'<br/>';
             if($quantity>=$newQuantity && $newQuantity!=1){ 
                 $modval=$quantity%$newQuantity;
+                $total=floor($quantity/$newQuantity);
                 if(!isset($datatoreturn[$newQuantity])){
                     $datatoreturn[$newQuantity]=0;
                 }
-                $datatoreturn[$newQuantity]=$datatoreturn[$newQuantity]+1;
+                $datatoreturn[$newQuantity]=$datatoreturn[$newQuantity]+$total;
                 $quantity=$modval;
             }
             if($newQuantity==1){
