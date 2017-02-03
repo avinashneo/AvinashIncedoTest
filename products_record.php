@@ -1,5 +1,7 @@
 <?php
-
+/*
+* The record class. Checking product name.
+*/
 class Record {
 	private $record;
 
