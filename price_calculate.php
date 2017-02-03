@@ -1,4 +1,8 @@
 <?php
+/**
+* An CalculatePrice system that tracks products and calculates the total
+* cost of all them based on a product listing input. 	
+*/
 include 'products_record.php';
 class CalculatePrice
 {
@@ -10,7 +14,14 @@ class CalculatePrice
         $this->record=$val;
         $this->product_record = new Record();
     }
-    
+    /*
+	* This function will calculate the total price of the product
+	* based on the unit price and the volume prices of that product
+	* given by the product listing.
+	*
+	* array $product 
+	* 
+	*/
    
     public function calculatedPrice($product)
     {
@@ -59,7 +70,14 @@ class CalculatePrice
     public function scanProduct($productName){
          return $this->product_record->scan($productName);
     }
-    
+    /*
+	* This function will calculate the total quantity of the product
+	* based on the unit price and the volume prices of that product
+	* given by the product listing.
+	*
+	* string $product 
+	* integer $quantity how many times product has this product been added? 
+	*/
     public function calculateQuantity($product,$quantity){ 
         $prices=$this->record[$product];
         $priceKeys=  array_keys($prices);
