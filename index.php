@@ -93,7 +93,7 @@ if(isset($_POST['submit'])){
         $assignedArray['D'][1]=0.15;
         // Initialize CalculatePrice objects.
         $classObj=new CalculatePrice($assignedArray);
-        $result= $classObj->calculatedPrice($products);
+        $resultTotal= $classObj->calculatedPrice($products);
 
         for ($i = 0; $i < strlen($products); $i++) {
 
@@ -105,7 +105,7 @@ if(isset($_POST['submit'])){
             }
 
 
-        echo "<span class='bold-red'>The total cost of: " . $products . " is: $".number_format($result, 2, '.', '')."</span>";
+        echo "<span class='bold-red'>The total cost of: " . $products . " is: $".number_format($resultTotal, 2, '.', '')."</span>";
     }else{
         echo "<span class='bold-red'>Only alphabets are allowed.</span>";
     }
