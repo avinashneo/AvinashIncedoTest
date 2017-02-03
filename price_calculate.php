@@ -19,7 +19,7 @@ class CalculatePrice
 	* based on the unit price and the volume prices of that product
 	* given by the product listing.
 	*
-	* array $product 
+	* string $product 
 	* 
 	*/
    
